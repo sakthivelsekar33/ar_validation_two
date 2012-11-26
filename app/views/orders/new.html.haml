@@ -1,0 +1,19 @@
+= form_for @order do |f|
+	%h3
+		Order Details
+	= f.error_messages :header_message => 'Order Details Errors', :message => 'Fix to proceed further', :class => 'head_em'
+	= error_messages_for :order, :class => 'head_em'
+	%br
+	= f.label :product_name
+	%br
+	= f.text_field :product_name
+	%br
+	= f.label :quantity
+	%br
+	= f.text_field :quantity
+	%br
+	%br
+	= f.check_box :order_acceptance, {}, 1, 0
+	Accpet Order Conditions
+	%br
+	= f.submit
